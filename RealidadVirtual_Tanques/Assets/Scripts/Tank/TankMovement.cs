@@ -9,7 +9,6 @@ public class TankMovement : MonoBehaviour
     public AudioClip m_EngineIdling;       
     public AudioClip m_EngineDriving;      
     public float m_PitchRange = 0.2f;
-
     
     private string m_MovementAxisName;     
     private string m_TurnAxisName;         
@@ -18,12 +17,10 @@ public class TankMovement : MonoBehaviour
     private float m_TurnInputValue;        
     private float m_OriginalPitch;         
 
-
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
     }
-
 
     private void OnEnable ()
     {
@@ -32,12 +29,10 @@ public class TankMovement : MonoBehaviour
         m_TurnInputValue = 0f;
     }
 
-
     private void OnDisable ()
     {
         m_Rigidbody.isKinematic = true;
     }
-
 
     private void Start()
     {
@@ -46,7 +41,6 @@ public class TankMovement : MonoBehaviour
 
         m_OriginalPitch = m_MovementAudio.pitch;
     }
-    
 
     private void Update()
     {
@@ -56,7 +50,6 @@ public class TankMovement : MonoBehaviour
         
         EngineAudio();
     }
-
 
     private void EngineAudio()
     {
@@ -81,14 +74,12 @@ public class TankMovement : MonoBehaviour
         }
     }
 
-
     private void FixedUpdate()
     {
         // Move and turn the tank.
         Move();
         Turn();
     }
-
 
     private void Move()
     {
@@ -97,7 +88,6 @@ public class TankMovement : MonoBehaviour
         
         m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
     }
-
 
     private void Turn()
     {

@@ -18,13 +18,11 @@ public class PhysicsButton : MonoBehaviour
     public float m_LaunchForce = 30f;
     /// </summary>
 
-
     private bool _isPressed;
     private Vector3 _startPos;
     private ConfigurableJoint _joint;
 
     public UnityEvent onPressed, onReleased;
-
     void Start()
     {
         _startPos = transform.localPosition;
@@ -61,7 +59,6 @@ public class PhysicsButton : MonoBehaviour
 
         m_ShootingAudio.clip = m_FireClip;
         m_ShootingAudio.Play();
-
     }
 
     private void Released()
@@ -69,6 +66,5 @@ public class PhysicsButton : MonoBehaviour
         _isPressed = false;
         onReleased.Invoke();
         Debug.Log("Released");
-
     }
 }
